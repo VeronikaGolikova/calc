@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-/**
- * Класс позволяет выполнить оперции сложения, вычитания, умножения и деления с десятичными числами
- * Работа ввода и вывода значений реализована через консоль
- */
-
 public class Calculator {
-    public static void main(String[] args) {
+
+    /**
+     * Метод позволяет выполнить оперции сложения, вычитания, умножения и деления с десятичными числами
+     * Работа ввода и вывода значений реализована через консоль
+     */
+    public static void calculate() {
         System.out.print("Введите первое число с плавающей точкой: ");
         Scanner scanner = new Scanner(System.in);
         double arg1 = scanner.nextDouble();
@@ -21,7 +21,7 @@ public class Calculator {
                 System.out.printf("%+.4f", rezalt);
             }
             break;
-            case 2:{
+            case 2: {
                 double rezalt = arg1 - arg2;
                 System.out.print(arg1 + " - " + arg2 + " = ");
                 System.out.printf("%+.4f", rezalt);
@@ -39,7 +39,8 @@ public class Calculator {
                 System.out.printf("%+.4f", rezalt);
             }
             break;
-            default: System.out.println("Выбрано неизвестное действие");
+            default:
+                System.out.println("Выбрано неизвестное действие");
         }
         scanner.close();
     }
