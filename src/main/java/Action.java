@@ -6,9 +6,10 @@ public class Action {
      * Метод для выбора выполняемого действия:
      * 1 - калькулятор
      * 2 - поиск максимального слова в массиве
+     * 3 - вывести массив рандомных чисел
      */
     public static void chooseAction() {
-        System.out.print("1 - калькулятор\n2 - поиск максимального слова в массиве\nВведите номер программы с которой хотите работать: ");
+        System.out.print("1 - калькулятор\n2 - поиск максимального слова в массиве\n3 - вывести массив рандомных чисел\nВведите номер программы с которой хотите работать: ");
         Scanner scanner = new Scanner(System.in);
         int action = scanner.nextInt();
         switch (action) {
@@ -18,6 +19,10 @@ public class Action {
             break;
             case 2: {
                 WordsArray.getMaxLengthWordFromArray();
+            }
+            break;
+            case 3: {
+                RandomNumber.printSortedArray();
             }
             break;
             default:
