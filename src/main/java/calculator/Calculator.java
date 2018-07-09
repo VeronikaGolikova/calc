@@ -1,3 +1,5 @@
+package calculator;
+
 import java.util.Scanner;
 
 public class Calculator {
@@ -14,34 +16,32 @@ public class Calculator {
         double arg2 = scanner.nextDouble();
         System.out.println("Выберите операцию: \n1 - сложение\n2 - вычитание\n3 - умножение\n4 - деление");
         int operation = scanner.nextInt();
+        String result;
         switch (operation) {
             case 1: {
-                double rezalt = arg1 + arg2;
-                System.out.print(arg1 + " + " + arg2 + " = ");
-                System.out.printf("%+.4f", rezalt);
+                Operation operationSum = new Sum(arg1, arg2);
+                result = operationSum.getResult();
             }
             break;
             case 2: {
-                double rezalt = arg1 - arg2;
-                System.out.print(arg1 + " - " + arg2 + " = ");
-                System.out.printf("%+.4f", rezalt);
+                Operation operationSum = new Subtraction(arg1, arg2);
+                result = operationSum.getResult();
             }
             break;
             case 3: {
-                double rezalt = arg1 * arg2;
-                System.out.print(arg1 + " * " + arg2 + " = ");
-                System.out.printf("%+.4f", rezalt);
+                Operation operationSum = new Multiplication(arg1, arg2);
+                result = operationSum.getResult();
             }
             break;
             case 4: {
-                double rezalt = arg1 / arg2;
-                System.out.print(arg1 + " / " + arg2 + " = ");
-                System.out.printf("%+.4f", rezalt);
+                Operation operationSum = new Division(arg1, arg2);
+                result = operationSum.getResult();
             }
             break;
             default:
-                System.out.println("Выбрано неизвестное действие");
+                result = "Выбрана неизвестная операция";
         }
         scanner.close();
+        System.out.print(result);
     }
 }
