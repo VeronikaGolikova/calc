@@ -1,5 +1,6 @@
 import calculator.Calculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Action {
@@ -13,22 +14,26 @@ public class Action {
     public static void chooseAction() {
         System.out.print("1 - калькулятор\n2 - поиск максимального слова в массиве\n3 - вывести массив рандомных чисел\nВведите номер программы с которой хотите работать: ");
         Scanner scanner = new Scanner(System.in);
-        int action = scanner.nextInt();
-        switch (action) {
-            case 1: {
-                Calculator.calculate();
+        try {
+            int action = scanner.nextInt();
+            switch (action) {
+                case 1: {
+                    Calculator.calculate();
+                }
+                break;
+                case 2: {
+                    WordsArray.getMaxLengthWordFromArray();
+                }
+                break;
+                case 3: {
+                    RandomNumber.printSortedArray();
+                }
+                break;
+                default:
+                    System.out.println("Выбрано неизвестное действие");
             }
-            break;
-            case 2: {
-                WordsArray.getMaxLengthWordFromArray();
-            }
-            break;
-            case 3: {
-                RandomNumber.printSortedArray();
-            }
-            break;
-            default:
-                System.out.println("Выбрано неизвестное действие");
+        } catch (InputMismatchException inputException) {
+            System.out.println("Возникла ошибка:" + inputException);
         }
     }
 }

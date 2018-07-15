@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
@@ -11,11 +12,12 @@ public class Calculator {
     public static void calculate() {
         System.out.print("Введите первое число с плавающей точкой: ");
         Scanner scanner = new Scanner(System.in);
-        double arg1 = scanner.nextDouble();
+        try{
+            double arg1 = scanner.nextDouble();
         System.out.print("Введите второе число с плавающей точкой: ");
         double arg2 = scanner.nextDouble();
         System.out.println("Выберите операцию: \n1 - сложение\n2 - вычитание\n3 - умножение\n4 - деление");
-        int operation = scanner.nextInt();
+            int operation = scanner.nextInt();
         String result;
         switch (operation) {
             case 1: {
@@ -43,5 +45,8 @@ public class Calculator {
         }
         scanner.close();
         System.out.print(result);
+        }catch (InputMismatchException inputException) {
+            System.out.println("Возникла ошибка:" + inputException);
+        }
     }
 }
