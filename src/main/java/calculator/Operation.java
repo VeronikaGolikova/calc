@@ -6,10 +6,6 @@ public abstract class Operation {
     private int operation;
     private double resultOfOperation;
 
-    public int getOperation() {
-        return operation;
-    }
-
     protected Operation(double agr1, double agr2, int operation) {
         this.agr1 = agr1;
         this.agr2 = agr2;
